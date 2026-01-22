@@ -77,7 +77,7 @@ void mat_fill(Matrix *m, float value)
 
     int total = m->rows * m->cols;
 
-    for (int i = 0; i < total; i++)
+    for (int i = 0; i < total; ++i)
     {
         m->data[i] = value;
     }
