@@ -4,7 +4,7 @@
 #include "matrix.h"
 
 /* =========================================================
- * Core arithmetic (out-parameter)
+ * Core arithmetic
  * ========================================================= */
 
 void mat_add(Matrix *out, const Matrix *a, const Matrix *b);
