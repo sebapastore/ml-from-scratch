@@ -103,7 +103,7 @@ void lr_fit(
         }
 
         /* bias gradient = mean(error) */
-        float grad_b = mean(error);
+        float grad_b = mat_mean(&error);
         lr->bias -= learning_rate * grad_b;
     }
 
