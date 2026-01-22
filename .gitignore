@@ -1,3 +1,7 @@
+# Builds / executables
+bin/*
+!bin/.gitkeep
+
 # Prerequisites
 *.d
 
@@ -53,3 +57,11 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# IDEs / Editors
+.vscode
+.idea
+
+# System / OS
+.DS_Store
+Thumbs.db
