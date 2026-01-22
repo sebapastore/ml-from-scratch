@@ -1,7 +1,7 @@
 #ifndef LINEAR_REGRESSION_H
 #define LINEAR_REGRESSION_H
 
-#include <matrix.h>
+#include "matrix.h"
 
 /*
  * Linear Regression model

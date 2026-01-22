@@ -1,7 +1,7 @@
-#include "linalg.h"
+#include <assert.h>
+#include <stddef.h>
 
-#include "assert.h"
-#include "stddef.h"
+#include "linalg.h"
 
 /* =========================================================
  * Core arithmetic

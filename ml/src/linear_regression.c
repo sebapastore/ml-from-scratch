@@ -1,8 +1,8 @@
 #include <assert.h>
 #include <stdlib.h>
 
-#include <linalg.h>
-#include <linear_regression.h>
+#include "linalg.h"
+#include "linear_regression.h"
 
 /* =========================================================
  * Lifecycle
