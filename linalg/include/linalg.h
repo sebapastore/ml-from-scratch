@@ -31,4 +31,13 @@ float mat_mean(const Matrix *m);
 
 void mat_apply(Matrix *out, const Matrix *m, float (*fn)(float));
 
+/* =========================================================
+ * Column-wise statistics
+ * ========================================================= */
+
+float mat_col_mean(const Matrix *X, int col);
+float mat_col_std(const Matrix *X, int col);
+float mat_col_min(const Matrix *X, int col);
+float mat_col_max(const Matrix *X, int col);
+
 #endif

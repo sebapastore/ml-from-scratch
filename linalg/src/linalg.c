@@ -132,3 +132,77 @@ void mat_apply(Matrix *out, const Matrix *m, float (*fn)(float))
         out->data[i] = fn(m->data[i]);
     }
 }
+
+/* =========================================================
+ * Column-wise statistics
+ * ========================================================= */
+
+float mat_col_mean(const Matrix *m, int col)
+{
+    assert(col >= 0 && col < m->cols);
+    assert(m->rows > 0);
+
+    float sum = 0.0f;
+
+    for (int i = 0; i < m->rows; i++)
+    {
+        sum += m->data[i * m->cols + col];
+    }
+
+    return sum / m->rows;
+}
+
+float mat_col_std(const Matrix *m, int col)
+{
+    assert(col >= 0 && col < m->cols);
+    assert(m->rows > 0);
+
+    float mean = mat_col_mean(m, col);
+    float sum_sq = 0.0f;
+
+    for (int i = 0; i < m->rows; ++i)
+    {
+        float diff = m->data[i * m->cols + col] - mean;
+        sum_sq += diff * diff;
+    }
+
+    return sqrtf(sum_sq / m->rows);
+}
+
+float mat_col_min(const Matrix *m, int col)
+{
+    assert(col >= 0 && col < m->cols);
+    assert(m->rows > 0);
+
+    float min = m->data[col];
+
+    for (int i = 1; i < m->rows; ++i)
+    {
+        float v = m->data[i * m->cols + col];
+        if (v < min)
+        {
+            min = v;
+        }
+    }
+
+    return min;
+}
+
+float mat_col_max(const Matrix *m, int col)
+{
+    assert(col >= 0 && col < m->cols);
+    assert(m->rows > 0);
+
+    float max = m->data[col];
+
+    for (int i = 1; i < m->rows; ++i)
+    {
+        float v = m->data[i * m->cols + col];
+        if (v > max)
+        {
+            max = v;
+        }
+    }
+
+    return max;
+}
